@@ -1,26 +1,23 @@
-variable "eks_cluster_name" {
-  description = "Name of EKS cluster"
-}
-
-variable "eks_version" {
-  description = "Version of EKS"
+variable "name" {
+  description = ""
 }
 
 variable "role_arn" {
-  description = "Role that will be used to create EKS"
+  description = ""
 }
 
-variable "eks_network_ids" {
-  description = "List of IDs of EKS networks"
+variable "k8s_version" {
+  description = ""
 }
 
-variable "nodegroup" {
-  type = map(object({
-    nodegroup_name = string
-    nodegroup_instance_type = list(string)
-    nodegroup_desired_size = string
-    nodegroup_max_size = string
-    nodegroup_min_size = string
-  }))
-  description = "Nodegroup info"
+variable "vpc_config" {
+  description = ""
+}
+
+variable "nodegroup_list" {
+  description = ""
+}
+
+variable "nodegroup_sg_ids" {
+  description = "ID of created Nodegroups security group"  
 }
